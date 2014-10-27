@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/curriculet/lexile.svg?branch=master)](https://travis-ci.org/Curriculet/Lexile) 
 [![Code Climate](https://codeclimate.com/github/curriculet/lexile/badges/gpa.svg)](https://codeclimate.com/github/curriculet/lexile)
-[![Test Coverage](https://codeclimate.com/github/curriculet/lexile/badges/coverage.svg)](https://codeclimate.com/github/curriculet/lexile)  
+[![Test Coverage](https://codeclimate.com/github/curriculet/lexile/badges/coverage.svg)](https://codeclimate.com/github/curriculet/lexile)
 [![Gem Version](https://badge.fury.io/rb/lexile.svg)](http://badge.fury.io/rb/lexile)
 
 # Lexile® 
@@ -62,7 +62,7 @@ Or install it yourself as:
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/lexile/fork )
+1. Fork it ( http://github.com/curriculet/lexile/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes and specs(`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
