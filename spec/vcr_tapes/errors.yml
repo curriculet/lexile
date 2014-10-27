@@ -1,0 +1,379 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@fabapi.lexile.com/api/fab/v2/book?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lexile API Ruby Gem by <USERNAME>
+  response:
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Sun, 26 Oct 2014 15:30:11 GMT
+      Location:
+      - https://fabapi.lexile.com/api/fab/v2/book/?format=json
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 26 Oct 2014 15:31:33 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@fabapi.lexile.com/api/fab/v2/book/?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lexile API Ruby Gem by <USERNAME>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 26 Oct 2014 15:33:20 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Vary:
+      - Accept
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"limit": 20, "next": "/api/fab/v2/book/?offset=20&limit=20&format=json",
+        "offset": 0, "previous": null, "total_count": 195487}, "objects": [{"ISBN":
+        "0743983599", "ISBN13": "9780743983594", "author": "Walsh, Kenneth", "booktype":
+        "Leveled Reader", "call_number": null, "categories": [{"id": 18, "name": "Reference
+        & Languages", "resource_uri": "/api/fab/v2/category/18/"}], "copyright": "2005",
+        "id": 11367, "keyword": null, "language": "English", "lexile": 680, "lexile_code":
+        "", "lexile_code_spanish": "", "lexile_display": "680L", "lexile_spanish":
+        null, "max_age": null, "min_age": null, "pages": 24, "publisher": "Teacher
+        Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11367/",
+        "serial": 375717, "series": "Early Fluent Plus Readers", "summary": "Explore
+        outer space and learn about stars, galaxies, planets, asteroids and how these
+        bodies are all related to one another. Featured in this book are photographs
+        from outer space and related vocabulary.", "timestamp": "2014-06-27T23:59:38",
+        "title": "Outer Space: Early Fluent Plus", "word_count": 1016, "word_count_spanish":
+        null}, {"ISBN": "0743983580", "ISBN13": "9780743983587", "author": "Walsh,
+        Kenneth", "booktype": "Leveled Reader", "call_number": null, "categories":
+        [{"id": 18, "name": "Reference & Languages", "resource_uri": "/api/fab/v2/category/18/"}],
+        "copyright": "2005", "id": 11366, "keyword": null, "language": "English",
+        "lexile": 640, "lexile_code": "", "lexile_code_spanish": "", "lexile_display":
+        "640L", "lexile_spanish": null, "max_age": null, "min_age": null, "pages":
+        24, "publisher": "Teacher Created Materials, Incorporated", "resource_uri":
+        "/api/fab/v2/book/11366/", "serial": 439158, "series": "Early Fluent Plus
+        Readers", "summary": "What make our planet so unique? Learn what Earth is
+        made of and all about its unique conditions that sustain life. This book includes
+        the history of Earth''s evolving geography and life forms, and vocabulary
+        related to the earth and its characteristics.", "timestamp": "2014-06-28T03:31:57",
+        "title": "Our Earth: Early Fluent Plus", "word_count": 740, "word_count_spanish":
+        null}, {"ISBN": "0743983572", "ISBN13": "9780743983570", "author": "Rice,
+        Howard", "booktype": "Leveled Reader", "call_number": null, "categories":
+        [{"id": 18, "name": "Reference & Languages", "resource_uri": "/api/fab/v2/category/18/"}],
+        "copyright": "2005", "id": 11365, "keyword": null, "language": "English",
+        "lexile": 700, "lexile_code": "", "lexile_code_spanish": "", "lexile_display":
+        "700L", "lexile_spanish": null, "max_age": null, "min_age": null, "pages":
+        24, "publisher": "Teacher Created Materials, Incorporated", "resource_uri":
+        "/api/fab/v2/book/11365/", "serial": 375972, "series": "Early Fluent Plus
+        Readers", "summary": "Journey through Earth''s wet and wild rainforests with
+        vivid photographs of the most unique plants and animals in the world''s most
+        untouched forests. Readers are introduced to the importance of protecting
+        the rainforests and vocabulary related to the rainforest and its amazing inhabitants.",
+        "timestamp": "2014-06-28T00:00:43", "title": "In the Rainforest: Early Fluent
+        Plus", "word_count": 690, "word_count_spanish": null}, {"ISBN": "0743983556",
+        "ISBN13": "9780743983556", "author": "Rice, Howard", "booktype": "Leveled
+        Reader", "call_number": null, "categories": [{"id": 18, "name": "Reference
+        & Languages", "resource_uri": "/api/fab/v2/category/18/"}], "copyright": "2005",
+        "id": 11363, "keyword": null, "language": "English", "lexile": 740, "lexile_code":
+        "", "lexile_code_spanish": "", "lexile_display": "740L", "lexile_spanish":
+        null, "max_age": null, "min_age": null, "pages": 24, "publisher": "Teacher
+        Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11363/",
+        "serial": 419392, "series": "Early Fluent Plus Readers", "summary": "Take
+        a trip through the different forests of the world to discover where forests
+        are located and what types of animals are native to forests. This book features
+        colorful pictures, a detailed map of forests on earth, and vocabulary related
+        to forests.", "timestamp": "2014-06-28T02:25:36", "title": "In the Forest:
+        Early Fluent Plus", "word_count": 623, "word_count_spanish": null}, {"ISBN":
+        "0743983564", "ISBN13": "9780743983563", "author": "Rice, Howard", "booktype":
+        "Leveled Reader", "call_number": null, "categories": [{"id": 18, "name": "Reference
+        & Languages", "resource_uri": "/api/fab/v2/category/18/"}], "copyright": "2005",
+        "id": 11364, "keyword": null, "language": "English", "lexile": 630, "lexile_code":
+        "", "lexile_code_spanish": "", "lexile_display": "630L", "lexile_spanish":
+        null, "max_age": null, "min_age": null, "pages": 24, "publisher": "Teacher
+        Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11364/",
+        "serial": 375791, "series": "Early Fluent Plus Readers", "summary": "Discover
+        the heat of the desert, its plant and animal life, and principles of evaporation
+        and erosion. A detailed map is included that shows the locations of the world''s
+        deserts as well as a graph that shows largest deserts in the world.", "timestamp":
+        "2014-06-27T23:59:50", "title": "In the Desert: Early Fluent Plus", "word_count":
+        652, "word_count_spanish": null}, {"ISBN": "074398353X", "ISBN13": "9780743983532",
+        "author": "", "booktype": "Leveled Reader", "call_number": null, "categories":
+        [{"id": 18, "name": "Reference & Languages", "resource_uri": "/api/fab/v2/category/18/"}],
+        "copyright": null, "id": 11361, "keyword": null, "language": "English", "lexile":
+        630, "lexile_code": "", "lexile_code_spanish": "", "lexile_display": "630L",
+        "lexile_spanish": null, "max_age": null, "min_age": null, "pages": 24, "publisher":
+        "Teacher Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11361/",
+        "serial": 257784, "series": "Early Fluent Readers", "summary": "Authentic,
+        leveled content that helps students practice and develop their nonfiction
+        reading skills.", "timestamp": "2014-06-02T18:39:09", "title": "All About
+        Skyscrapers", "word_count": 474, "word_count_spanish": null}, {"ISBN": "0743983548",
+        "ISBN13": "9780743983549", "author": "", "booktype": "Leveled Reader", "call_number":
+        null, "categories": [{"id": 18, "name": "Reference & Languages", "resource_uri":
+        "/api/fab/v2/category/18/"}], "copyright": null, "id": 11362, "keyword": null,
+        "language": "English", "lexile": 680, "lexile_code": "", "lexile_code_spanish":
+        "", "lexile_display": "680L", "lexile_spanish": null, "max_age": null, "min_age":
+        null, "pages": 24, "publisher": "Teacher Created Materials, Incorporated",
+        "resource_uri": "/api/fab/v2/book/11362/", "serial": 257691, "series": "Early
+        Fluent Readers", "summary": "Authentic, leveled content that helps students
+        practice and develop their nonfiction reading skills.", "timestamp": "2014-06-02T18:39:24",
+        "title": "All about Chocolate", "word_count": 538, "word_count_spanish": null},
+        {"ISBN": "0743983505", "ISBN13": "9780743983501", "author": "", "booktype":
+        "Leveled Reader", "call_number": null, "categories": [{"id": 18, "name": "Reference
+        & Languages", "resource_uri": "/api/fab/v2/category/18/"}], "copyright": null,
+        "id": 11358, "keyword": null, "language": "English", "lexile": 560, "lexile_code":
+        "", "lexile_code_spanish": "", "lexile_display": "560L", "lexile_spanish":
+        null, "max_age": null, "min_age": null, "pages": 24, "publisher": "Teacher
+        Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11358/",
+        "serial": 257685, "series": "Early Fluent Readers", "summary": "Authentic,
+        leveled content that helps students practice and develop their nonfiction
+        reading skills.", "timestamp": "2014-06-02T18:39:23", "title": "Horses", "word_count":
+        578, "word_count_spanish": null}, {"ISBN": "0743983513", "ISBN13": "9780743983518",
+        "author": "", "booktype": "Leveled Reader", "call_number": null, "categories":
+        [{"id": 18, "name": "Reference & Languages", "resource_uri": "/api/fab/v2/category/18/"}],
+        "copyright": null, "id": 11359, "keyword": null, "language": "English", "lexile":
+        450, "lexile_code": "", "lexile_code_spanish": "", "lexile_display": "450L",
+        "lexile_spanish": null, "max_age": null, "min_age": null, "pages": 24, "publisher":
+        "Teacher Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11359/",
+        "serial": 257686, "series": "Early Fluent Readers", "summary": "Authentic,
+        leveled content that helps students practice and develop their nonfiction
+        reading skills.", "timestamp": "2014-06-02T18:39:23", "title": "Snakes", "word_count":
+        440, "word_count_spanish": null}, {"ISBN": "0743983521", "ISBN13": "9780743983525",
+        "author": "", "booktype": "Leveled Reader", "call_number": null, "categories":
+        [{"id": 18, "name": "Reference & Languages", "resource_uri": "/api/fab/v2/category/18/"}],
+        "copyright": null, "id": 11360, "keyword": null, "language": "English", "lexile":
+        660, "lexile_code": "", "lexile_code_spanish": "", "lexile_display": "660L",
+        "lexile_spanish": null, "max_age": null, "min_age": null, "pages": 24, "publisher":
+        "Teacher Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11360/",
+        "serial": 257671, "series": "Early Fluent Readers", "summary": "Authentic,
+        leveled content that helps students practice and develop their nonfiction
+        reading skills.", "timestamp": "2014-06-02T18:39:19", "title": "All About
+        Hand-Blown Glass", "word_count": 501, "word_count_spanish": null}, {"ISBN":
+        "0743983475", "ISBN13": "9780743983471", "author": "", "booktype": "Leveled
+        Reader", "call_number": null, "categories": [{"id": 18, "name": "Reference
+        & Languages", "resource_uri": "/api/fab/v2/category/18/"}], "copyright": null,
+        "id": 11355, "keyword": null, "language": "English", "lexile": 660, "lexile_code":
+        "", "lexile_code_spanish": "", "lexile_display": "660L", "lexile_spanish":
+        null, "max_age": null, "min_age": null, "pages": 20, "publisher": "Teacher
+        Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11355/",
+        "serial": 257734, "series": "Early Fluent Readers", "summary": "Authentic,
+        leveled content that helps students practice and develop their nonfiction
+        reading skills.", "timestamp": "2014-06-02T18:39:33", "title": "Tornadoes
+        and Hurricanes", "word_count": 490, "word_count_spanish": null}, {"ISBN":
+        "0743983483", "ISBN13": "9780743983488", "author": "", "booktype": "Leveled
+        Reader", "call_number": null, "categories": [{"id": 18, "name": "Reference
+        & Languages", "resource_uri": "/api/fab/v2/category/18/"}], "copyright": null,
+        "id": 11356, "keyword": null, "language": "English", "lexile": 660, "lexile_code":
+        "", "lexile_code_spanish": "", "lexile_display": "660L", "lexile_spanish":
+        null, "max_age": null, "min_age": null, "pages": 20, "publisher": "Teacher
+        Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11356/",
+        "serial": 257801, "series": "Early Fluent Readers", "summary": "Authentic,
+        leveled content that helps students practice and develop their nonfiction
+        reading skills.", "timestamp": "2014-06-02T18:39:13", "title": "Volcanoes",
+        "word_count": 453, "word_count_spanish": null}, {"ISBN": "0743983491", "ISBN13":
+        "9780743983495", "author": "", "booktype": "Leveled Reader", "call_number":
+        null, "categories": [{"id": 18, "name": "Reference & Languages", "resource_uri":
+        "/api/fab/v2/category/18/"}], "copyright": null, "id": 11357, "keyword": null,
+        "language": "English", "lexile": 620, "lexile_code": "", "lexile_code_spanish":
+        "", "lexile_display": "620L", "lexile_spanish": null, "max_age": null, "min_age":
+        null, "pages": 24, "publisher": "Teacher Created Materials, Incorporated",
+        "resource_uri": "/api/fab/v2/book/11357/", "serial": 257687, "series": "Early
+        Fluent Readers", "summary": "Authentic, leveled content that helps students
+        practice and develop their nonfiction reading skills.", "timestamp": "2014-06-02T18:39:24",
+        "title": "Eagles", "word_count": 496, "word_count_spanish": null}, {"ISBN":
+        "0743983459", "ISBN13": "9780743983457", "author": "", "booktype": "Leveled
+        Reader", "call_number": null, "categories": [{"id": 18, "name": "Reference
+        & Languages", "resource_uri": "/api/fab/v2/category/18/"}], "copyright": null,
+        "id": 11353, "keyword": null, "language": "English", "lexile": 600, "lexile_code":
+        "", "lexile_code_spanish": "", "lexile_display": "600L", "lexile_spanish":
+        null, "max_age": null, "min_age": null, "pages": 20, "publisher": "Teacher
+        Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11353/",
+        "serial": 258581, "series": "Early Fluent Readers", "summary": "Authentic,
+        leveled content that helps students practice and develop their nonfiction
+        reading skills.", "timestamp": "2014-06-02T18:45:47", "title": "Caribbean,
+        The", "word_count": 393, "word_count_spanish": null}, {"ISBN": "0743983467",
+        "ISBN13": "9780743983464", "author": "", "booktype": "Leveled Reader", "call_number":
+        null, "categories": [{"id": 18, "name": "Reference & Languages", "resource_uri":
+        "/api/fab/v2/category/18/"}], "copyright": null, "id": 11354, "keyword": null,
+        "language": "English", "lexile": 500, "lexile_code": "", "lexile_code_spanish":
+        "", "lexile_display": "500L", "lexile_spanish": null, "max_age": null, "min_age":
+        null, "pages": 20, "publisher": "Teacher Created Materials, Incorporated",
+        "resource_uri": "/api/fab/v2/book/11354/", "serial": 258565, "series": "Early
+        Fluent Readers", "summary": "Authentic, leveled content that helps students
+        practice and develop their nonfiction reading skills.", "timestamp": "2014-06-02T18:44:42",
+        "title": "Earthquakes", "word_count": 456, "word_count_spanish": null}, {"ISBN":
+        "0743983432", "ISBN13": "9780743983433", "author": "", "booktype": "Leveled
+        Reader", "call_number": null, "categories": [{"id": 18, "name": "Reference
+        & Languages", "resource_uri": "/api/fab/v2/category/18/"}], "copyright": null,
+        "id": 11351, "keyword": null, "language": "English", "lexile": 500, "lexile_code":
+        "", "lexile_code_spanish": "", "lexile_display": "500L", "lexile_spanish":
+        null, "max_age": null, "min_age": null, "pages": 20, "publisher": "Teacher
+        Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11351/",
+        "serial": 257823, "series": "Early Fluent Readers", "summary": "Authentic,
+        leveled content that helps students practice and develop their nonfiction
+        reading skills.", "timestamp": "2014-06-02T18:39:24", "title": "Mexico", "word_count":
+        330, "word_count_spanish": null}, {"ISBN": "0743983440", "ISBN13": "9780743983440",
+        "author": "", "booktype": "Leveled Reader", "call_number": null, "categories":
+        [{"id": 18, "name": "Reference & Languages", "resource_uri": "/api/fab/v2/category/18/"}],
+        "copyright": null, "id": 11352, "keyword": null, "language": "English", "lexile":
+        540, "lexile_code": "", "lexile_code_spanish": "", "lexile_display": "540L",
+        "lexile_spanish": null, "max_age": null, "min_age": null, "pages": 20, "publisher":
+        "Teacher Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11352/",
+        "serial": 257777, "series": "Early Fluent Readers", "summary": "Authentic,
+        leveled content that helps students practice and develop their nonfiction
+        reading skills.", "timestamp": "2014-06-02T18:39:03", "title": "Canada", "word_count":
+        322, "word_count_spanish": null}, {"ISBN": "0743983416", "ISBN13": "9780743983419",
+        "author": "", "booktype": "Leveled Reader", "call_number": null, "categories":
+        [{"id": 18, "name": "Reference & Languages", "resource_uri": "/api/fab/v2/category/18/"}],
+        "copyright": null, "id": 11349, "keyword": null, "language": "English", "lexile":
+        480, "lexile_code": "", "lexile_code_spanish": "", "lexile_display": "480L",
+        "lexile_spanish": null, "max_age": null, "min_age": null, "pages": 20, "publisher":
+        "Teacher Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11349/",
+        "serial": 258610, "series": "Early Fluent Readers", "summary": "Authentic,
+        leveled content that helps students practice and develop their nonfiction
+        reading skills.", "timestamp": "2014-06-02T18:45:01", "title": "Visit to a
+        Farm, A", "word_count": 307, "word_count_spanish": null}, {"ISBN": "0743983424",
+        "ISBN13": "9780743983426", "author": "", "booktype": "Leveled Reader", "call_number":
+        null, "categories": [{"id": 18, "name": "Reference & Languages", "resource_uri":
+        "/api/fab/v2/category/18/"}], "copyright": null, "id": 11350, "keyword": null,
+        "language": "English", "lexile": 420, "lexile_code": "", "lexile_code_spanish":
+        "", "lexile_display": "420L", "lexile_spanish": null, "max_age": null, "min_age":
+        null, "pages": 20, "publisher": "Teacher Created Materials, Incorporated",
+        "resource_uri": "/api/fab/v2/book/11350/", "serial": 258595, "series": "Early
+        Fluent Readers", "summary": "Authentic, leveled content that helps students
+        practice and develop their nonfiction reading skills.", "timestamp": "2014-06-02T18:44:57",
+        "title": "Visit to a Publisher, A", "word_count": 399, "word_count_spanish":
+        null}, {"ISBN": "0743983408", "ISBN13": "9780743983402", "author": "", "booktype":
+        "Leveled Reader", "call_number": null, "categories": [{"id": 18, "name": "Reference
+        & Languages", "resource_uri": "/api/fab/v2/category/18/"}], "copyright": null,
+        "id": 11348, "keyword": null, "language": "English", "lexile": 380, "lexile_code":
+        "", "lexile_code_spanish": "", "lexile_display": "380L", "lexile_spanish":
+        null, "max_age": null, "min_age": null, "pages": 20, "publisher": "Teacher
+        Created Materials, Incorporated", "resource_uri": "/api/fab/v2/book/11348/",
+        "serial": 257902, "series": "Early Fluent Readers", "summary": "Authentic,
+        leveled content that helps students practice and develop their nonfiction
+        reading skills.", "timestamp": "2014-06-02T18:40:00", "title": "Visit to an
+        Automobile Factory", "word_count": 355, "word_count_spanish": null}]}'
+    http_version: 
+  recorded_at: Sun, 26 Oct 2014 15:31:34 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@fabapi.lexile.com/api/fab/v2/404?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lexile API Ruby Gem by <USERNAME>
+  response:
+    status:
+      code: 404
+      message: NOT FOUND
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Sun, 26 Oct 2014 15:30:13 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<h1>Not Found</h1><p>The requested URL /api/fab/v2/404 was not found
+        on this server.</p>"
+    http_version: 
+  recorded_at: Sun, 26 Oct 2014 15:31:34 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@fabapi.lexile.com/api/fab/api_version/404?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lexile API Ruby Gem by <USERNAME>
+  response:
+    status:
+      code: 404
+      message: NOT FOUND
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Sun, 26 Oct 2014 21:50:10 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<h1>Not Found</h1><p>The requested URL /api/fab/api_version/404 was
+        not found on this server.</p>"
+    http_version: 
+  recorded_at: Sun, 26 Oct 2014 21:48:24 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@fabapi.lexile.com/api/fab/api_version/book?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lexile API Ruby Gem by <USERNAME>
+  response:
+    status:
+      code: 404
+      message: NOT FOUND
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Sun, 26 Oct 2014 21:50:10 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Length:
+      - '98'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<h1>Not Found</h1><p>The requested URL /api/fab/api_version/book was
+        not found on this server.</p>"
+    http_version: 
+  recorded_at: Sun, 26 Oct 2014 21:48:24 GMT
+recorded_with: VCR 2.9.2

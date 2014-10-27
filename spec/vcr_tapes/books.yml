@@ -1,0 +1,152 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@fabapi.lexile.com/api/fab/v2/book/315833?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lexile API Ruby Gem by <USERNAME>
+  response:
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Sun, 26 Oct 2014 15:38:53 GMT
+      Location:
+      - https://fabapi.lexile.com/api/fab/v2/book/315833/?format=json
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 26 Oct 2014 15:37:06 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@fabapi.lexile.com/api/fab/v2/book/315833/?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lexile API Ruby Gem by <USERNAME>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 26 Oct 2014 15:38:54 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Vary:
+      - Accept
+      Content-Length:
+      - '827'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"ISBN": "006201272X", "ISBN13": "9780062012722", "author": "", "booktype":
+        "Trade Nonfiction", "call_number": null, "categories": [], "copyright": "2005",
+        "id": 315833, "keyword": null, "language": "English", "lexile": 900, "lexile_code":
+        "", "lexile_code_spanish": "", "lexile_display": "900L", "lexile_spanish":
+        null, "max_age": null, "min_age": null, "pages": 304, "publisher": "HarperCollins
+        Publishers - (HarperTeen)", "resource_uri": "/api/fab/v2/book/315833/", "serial":
+        530430, "series": null, "summary": "The editor of the classic GO ASK ALICE
+        has compiled the poignant journals of a 14-year-old date-rape victim who contracted
+        AIDS and died.", "timestamp": "2014-07-24T15:43:58", "title": "It Happened
+        to Nancy: By An Anonymous Teenager: A True Story from Her Diary", "word_count":
+        58650, "word_count_spanish": null}'
+    http_version: 
+  recorded_at: Sun, 26 Oct 2014 15:37:07 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@fabapi.lexile.com/api/fab/v2/book?ISBN13=9780062012722&format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lexile API Ruby Gem by <USERNAME>
+  response:
+    status:
+      code: 301
+      message: MOVED PERMANENTLY
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Sun, 26 Oct 2014 15:52:13 GMT
+      Location:
+      - https://fabapi.lexile.com/api/fab/v2/book/?format=json&ISBN13=9780062012722
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 26 Oct 2014 15:53:35 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>:<PASSWORD>@fabapi.lexile.com/api/fab/v2/book/?ISBN13=9780062012722&format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lexile API Ruby Gem by <USERNAME>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 26 Oct 2014 15:52:14 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Vary:
+      - Accept
+      Content-Length:
+      - '928'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"meta": {"limit": 20, "next": null, "offset": 0, "previous": null,
+        "total_count": 1}, "objects": [{"ISBN": "006201272X", "ISBN13": "9780062012722",
+        "author": "", "booktype": "Trade Nonfiction", "call_number": null, "categories":
+        [], "copyright": "2005", "id": 315833, "keyword": null, "language": "English",
+        "lexile": 900, "lexile_code": "", "lexile_code_spanish": "", "lexile_display":
+        "900L", "lexile_spanish": null, "max_age": null, "min_age": null, "pages":
+        304, "publisher": "HarperCollins Publishers - (HarperTeen)", "resource_uri":
+        "/api/fab/v2/book/315833/", "serial": 530430, "series": null, "summary": "The
+        editor of the classic GO ASK ALICE has compiled the poignant journals of a
+        14-year-old date-rape victim who contracted AIDS and died.", "timestamp":
+        "2014-07-24T15:43:58", "title": "It Happened to Nancy: By An Anonymous Teenager:
+        A True Story from Her Diary", "word_count": 58650, "word_count_spanish": null}]}'
+    http_version: 
+  recorded_at: Sun, 26 Oct 2014 15:53:36 GMT
+recorded_with: VCR 2.9.2
