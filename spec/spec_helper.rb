@@ -1,5 +1,9 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 require 'rspec'
 require 'vcr'
 require 'webmock/rspec'
@@ -21,6 +25,7 @@ VCR.configure do |c|
     record:                      :none
   }
 
+  c.ignore_hosts 'codeclimate.com'
   c.filter_sensitive_data("<USERNAME>") { Lexile.options[:username] }
   c.filter_sensitive_data("<PASSWORD>") { Lexile.options[:password] }
 end

@@ -1,0 +1,14 @@
+language: ruby
+cache: bundler
+
+rvm:
+  - 2.1.2
+
+script: 'CODECLIMATE_REPO_TOKEN=cd173d6c860a8493b813ea4ed982824b180b0c50604e3a27c3a3c83e94868d71 bundle exec rake'
+
+notifications:
+  email:
+    recipients:
+      - mauricio@curriculet.com
+    on_failure: change
+    on_success: never

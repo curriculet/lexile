@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Curriculet/Lexile.png?branch=master)](https://travis-ci.org/Curriculet/Lexile) [![Gem Version](https://badge.fury.io/rb/sinderella.png)](http://badge.fury.io/rb/sinderella) [![Code Climate](https://codeclimate.com/github/curriculet/lexile/badges/gpa.svg)](https://codeclimate.com/github/curriculet/lexile)[![Test Coverage](https://codeclimate.com/github/curriculet/lexile/badges/coverage.svg)](https://codeclimate.com/github/curriculet/lexile)  [![GitHub version](https://badge.fury.io/gh/curriculet%2Flexile.svg)](http://badge.fury.io/gh/curriculet%2Flexile)
+
 # Lexile® 
 
 This gem wraps a portion of the Lexile database API. You need to obtain an

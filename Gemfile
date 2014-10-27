@@ -13,3 +13,5 @@ group :development, :test do
   gem 'jeweler'
   gem 'factory_girl'
 end
+
+gem "codeclimate-test-reporter", group: :test, require: nil
