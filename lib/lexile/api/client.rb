@@ -48,14 +48,12 @@ module Lexile
       # @raise Lexile::HTTPError when any HTTP error response is received
       def get( path, params={}, headers={})
         
-        get_options = build_get_options( params, headers)
+        get_args = build_get_args( params, headers)
         
-        if block_given?
-          yield get_options 
-        end
-        
+        yield get_args if block_given? 
+                
         #puts "CALLING API: #{Lexile.api_url}#{path} ===#{get_options}"
-        response = self.class.get( path, get_options)
+        response = self.class.get( path, get_args)
 
         case response.code
         when 200..201
@@ -77,15 +75,15 @@ module Lexile
         end
       end
 
-      # build_get_options
+      # build_get_args
       # Build the hash of options for an HTTP get request.
       #
       # @param params  [Hash] optional. Any query parameters to add to the request.
       # @param user_headers [Hash] optional. Any query parameters to add to the request.
       #
       # @return [Hash] The properly formated get_options.
-      def build_get_options( params={}, user_headers={})
-        get_options = {}
+      def build_get_args( params={}, user_headers={})
+        get_args = {}
         query ={ format: 'json'} #all requests get this query params
 
         query.merge!(params)
@@ -94,11 +92,11 @@ module Lexile
         headers ={}
         headers.merge!( user_headers )
 
-        get_options[:query]      = query
-        get_options[:headers]    = headers
-        get_options[:basic_auth] = { username: Lexile.options[:username],
+        get_args[:query]      = query
+        get_args[:headers]    = headers
+        get_args[:basic_auth] = { username: Lexile.options[:username],
                                      password: Lexile.options[:password]}
-        get_options
+        get_args
       end
     end
   end
