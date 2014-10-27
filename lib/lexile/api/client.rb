@@ -21,16 +21,12 @@ module Lexile
 
         if configuration.is_a?(Module) && configuration.to_s == 'Lexile'
           config = configuration
-        elsif configuration.is_a?(Hash)
-          config = Hashie::Mash.new( configuration )
-          config.api_url = [config.endpoint,config.api_version].join('/')
+        else 
+          if configuration.is_a?(Hash)
+            config = Hashie::Mash.new( configuration )
+            config.api_url = [config.endpoint,config.api_version].join('/')
+          end
         end
-
-        #if config.api_key
-          #self.class.default_params({ 'api_key' => config.api_key})
-        #else
-          #raise Lexile::InvalidCredentials.new("Api Key is not present but it is required.")
-        #end
 
         self.class.base_uri( config.api_url )                     if config.api_url
         self.class.default_timeout config.timeout.to_f            if config.timeout
@@ -51,9 +47,13 @@ module Lexile
       # @return [String]. The raw response body (JSON is expected) Raises appropriate exception if it fails
       # @raise Lexile::HTTPError when any HTTP error response is received
       def get( path, params={}, headers={})
+        
         get_options = build_get_options( params, headers)
-        yield get_options if block_given?
-
+        
+        if block_given?
+          yield get_options 
+        end
+        
         #puts "CALLING API: #{Lexile.api_url}#{path} ===#{get_options}"
         response = self.class.get( path, get_options)
 
