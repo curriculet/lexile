@@ -1,28 +1,7 @@
 module Lexile
   module Model
     def self.included(base)
-      base.send :include, InstanceMethods
       base.send :extend, ClassMethods
-    end
-
-    module InstanceMethods
-      def to_json(*args)
-        as_json(*args).to_json(*args)
-      end
-
-      def as_json(args = {})
-        self.to_hash.stringify_keys
-      end
-
-      def to_i; id; end
-
-      def ==(other)
-        id == other.id
-      end
-
-      def json_root
-        self.class.json_root
-      end
     end
 
     module ClassMethods

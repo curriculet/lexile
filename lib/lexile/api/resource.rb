@@ -22,22 +22,6 @@ module Lexile
         @client = client
       end
 
-      protected
-      def to_json_array( param )
-        if param.is_a? Array
-          return param.to_json
-        else
-          return [param].to_json
-        end
-      end
-
-      def to_comma_separated_list( param )
-        if param.is_a? Array
-          return param.join(',')
-        else
-          return param
-        end
-      end
     end
   end
 end

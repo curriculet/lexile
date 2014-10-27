@@ -33,7 +33,7 @@ describe Lexile::Api::Books,  :vcr => { :cassette_name => "books" } do
     end
   end
 
-  context '#find_by_isbn' do
+  context '#find_by_isbn13' do
     let(:books){ Lexile.books.find_by_isbn13(lexile_book_isbn13) }
 
     it "should return not empty array" do
@@ -72,7 +72,7 @@ describe Lexile::Api::Books,  :vcr => { :cassette_name => "books" } do
   end
 
   context '#find_by_title' do
-     let(:books){ Lexile.books.find_by_isbn13(lexile_book_isbn13) }
+     let(:books){ Lexile.books.find_by_title(lexile_book_title) }
 
      it "should return not empty array" do
        expect(books).to_not be_nil

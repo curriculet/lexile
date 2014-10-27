@@ -3,8 +3,13 @@ require 'spec_helper'
 describe Lexile::API::Client do
 
   let(:client){
+    set_testing_configuration
     Lexile::API::Client.new( Lexile )
   }
+
+  it "should have a VERSION" do
+    Lexile::VERSION.should_not be_nil
+  end
 
   describe 'initialization' do
     describe 'via configure' do
@@ -49,19 +54,43 @@ describe Lexile::API::Client do
   end
 
   describe "get" do
-    #
-    # Because of the conflict of Excon.stubs with VCR (they do not work at the same time)
-    # We created a errors.yml file by hand to simulate stubs that always return the desired error code
-    #
     it "should not raise an exception with response status 200" do
       VCR.use_cassette("errors") do
         expect{ client.get("/book") }.not_to raise_error
       end
     end
 
+
+    it "should raise Lexile::AuthenticationFailed with response status is 401" do
+          VCR.use_cassette("errors") do
+            expect{ client.get("/401") }.to raise_error  Lexile::AuthenticationFailed
+          end
+    end
+
+
     it "should raise Lexile::NotFound with response status is 404" do
       VCR.use_cassette("errors") do
         expect{ client.get("/404") }.to raise_error  Lexile::NotFound
+      end
+    end
+
+
+
+    [
+      {status: 400, ex: Lexile::BadRequest },
+      {status: 401, ex: Lexile::AuthenticationFailed},
+      {status: 404, ex: Lexile::NotFound},
+      {status: 500, ex: Lexile::ServerError},
+      {status: 502, ex: Lexile::Unavailable},
+      {status: 503, ex: Lexile::RateLimited},
+      {status: 504, ex: Lexile::RateLimited},
+      {status: 999, ex: Lexile::UnknownStatusCode}
+    ].each do |test_args|
+      it "should raise #{test_args[:ex].name} when status code is #{test_args[:status]}" do
+        client.class.stub(:get){ mock = double; mock.stub(:code){test_args[:status]}; mock }
+        expect{
+          client.get("/something")
+        }.to raise_error test_args[:ex]
       end
     end
   end

@@ -22,5 +22,6 @@ module Lexile
   class BadRequest            < HTTPError; end
   class ServerError           < HTTPError; end
   class AuthenticationFailed  < HTTPError; end
+  class RateLimited           < HTTPError; end
   class UnknownStatusCode     < HTTPError; end
 end

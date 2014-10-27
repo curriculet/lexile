@@ -72,7 +72,7 @@ module Lexile
           raise Lexile::ServerError.new(response, params)
         when 502
           raise Lexile::Unavailable.new(response, params)
-        when 503
+        when 503, 504
           raise Lexile::RateLimited.new(response, params)
         else
           raise Lexile::UnknownStatusCode.new(response, params)
