@@ -1,5 +1,3 @@
-require 'hashie/rash'
-
 module Lexile
   module API
     class Client
@@ -24,7 +22,7 @@ module Lexile
         if configuration.is_a?(Module) && configuration.to_s == 'Lexile'
           config = configuration
         elsif configuration.is_a?(Hash)
-          config = Hashie::Rash.new( configuration )
+          config = Hashie::Mash.new( configuration )
           config.api_url = [config.endpoint,config.api_version].join('/')
         end
 

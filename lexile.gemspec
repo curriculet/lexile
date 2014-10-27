@@ -10,9 +10,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Mauricio Alvarez"]
   spec.email         = ["mauricio@curriculet.com"]
   spec.date          = "2014-10-25"
-  spec.description   = "Lexile API "
-  spec.summary       = "Lexile API"
-  spec.homepage      = ""
+  spec.description   = "A gem for the Lexile® database API "
+  spec.summary       = "A gem to find a book's Lexile DB entry by name or ISBN13"
+  spec.homepage      = "https://github.com/curriculet/lexile"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -20,6 +20,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
+  spec.add_runtime_dependency "httparty", "~> 0.10"
+  spec.add_runtime_dependency "hashie", "~> 2.0.0"
 end

@@ -7,7 +7,7 @@ CodeClimate::TestReporter.start
 require 'rspec'
 require 'vcr'
 require 'webmock/rspec'
-require 'rash'
+require 'hashie'
 require 'lexile'
 
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}

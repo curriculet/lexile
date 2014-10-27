@@ -1,5 +1,5 @@
 require 'json'
-require 'hashie/rash'
+require 'hashie/mash'
 require 'httparty'
 
 require 'lexile/configuration'

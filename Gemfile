@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in lexile.gemspec
 gemspec
 
-gem 'httparty', '~> 0.10'
-gem 'rash',     '~> 0.3'
+gem 'httparty',   '~> 0.10'
+gem 'hashie',     '~> 2.0'
 
 group :development, :test do
   gem 'rspec', '~> 2'
