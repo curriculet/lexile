@@ -32,6 +32,12 @@ Or install it yourself as:
 
     $ gem install lexile
 
+## Configuration
+    Lexile.configure do |c|
+      c.username    = <YOUR USERNAME>
+      c.password    = <YOUR PASSWORD>
+    end
+
 ## Usage
 
     >>  b = Lexile.books.show("315833")
