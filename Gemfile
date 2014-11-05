@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'httparty',   '~> 0.10'
-gem 'hashie',     '~> 2.0'
+gem 'hashie'     
 
 group :development, :test do
   gem 'rspec', '~> 2'
