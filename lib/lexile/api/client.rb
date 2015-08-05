@@ -52,7 +52,7 @@ module Lexile
         
         yield get_args if block_given? 
                 
-        puts "CALLING API: #{Lexile.api_url}#{path} ===#{get_args}"
+        #puts "CALLING API: #{Lexile.api_url}#{path} ===#{get_args}"
         response = self.class.get( path, get_args)
 
         case response.code

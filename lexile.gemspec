@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
 
   spec.authors       = ["Mauricio Alvarez"]
   spec.email         = ["mauricio@curriculet.com"]
-  spec.date          = "2015-08-05"
+  spec.date          = "2015-08-06"
   spec.description   = "A gem for the Lexile® database API "
   spec.summary       = "A gem to find a book's Lexile DB entry by name or ISBN13"
   spec.homepage      = "https://github.com/curriculet/lexile"

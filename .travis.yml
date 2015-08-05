@@ -1,5 +1,8 @@
 language: ruby
+
 cache: bundler
+
+sudo: false
 
 rvm:
   - 2.1.2
@@ -7,6 +10,7 @@ rvm:
 script: 'CODECLIMATE_REPO_TOKEN=cd173d6c860a8493b813ea4ed982824b180b0c50604e3a27c3a3c83e94868d71 bundle exec rake'
 
 notifications:
+  hipchat: 5dcc3ea1d31b5e4b4c1d1475bf47c8@Development
   email:
     recipients:
       - mauricio@curriculet.com
