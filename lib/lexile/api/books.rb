@@ -4,13 +4,14 @@ module Lexile
       api_model Lexile::Book
 
       def show id
-        response = @client.get( "#{ api_model.api_path }/#{id}" )
-        api_model.parse(response.body)
+        response_json = @client.get( "#{Lexile.api_version}/#{ api_model.api_path }/#{id}" )
+        api_model.parse( response_json )
       end
 
       def find( query_params )
-        response = @client.get( "#{ api_model.api_path }", query_params )
-        api_model.parse(response.body)
+        Lexile::Api::PageList.new( @client, api_model,  query_params ).to_results_list
+        #response_json = @client.get( "#{ api_model.api_path }", query_params )
+        #api_model.parse( response_json )
       end
 
       def find_by_isbn13 isbn13

@@ -15,6 +15,9 @@ require 'lexile/book'
 require 'lexile/api/resource'
 require 'lexile/api/books'
 require 'lexile/api/endpoints'
+require 'lexile/api/page'
+require 'lexile/api/page_list'
+require 'lexile/api/result_list'
 
 module Lexile
   extend Configuration

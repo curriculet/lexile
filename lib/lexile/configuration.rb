@@ -6,8 +6,8 @@ module Lexile
     #@!visibility private
     VALID_CONFIG_KEYS     = VALID_CONNECTION_KEYS + VALID_OPTIONS_KEYS
 
-    DEFAULT_ENDPOINT      = 'https://fabapi.lexile.com/api/fab'
-    DEFAULT_API_VERSION   = 'v2'
+    DEFAULT_ENDPOINT      = 'https://fabapi.lexile.com'
+    DEFAULT_API_VERSION   = '/api/fab/v2.1'
     DEFAULT_USER_AGENT    = 'Lexile API Ruby Gem by Curriculet'.freeze
     DEFAULT_TIMEOUT       = nil
     DEFAULT_TESTING       = false
@@ -45,15 +45,19 @@ module Lexile
     # Interpolate the base url for all calls
     # return [String] the base url for all api calls
     def api_url( path = nil)
-      [endpoint,api_version,path].compact.join('/')
+      [endpoint,path].compact.join('/')
+    end
+
+    def config
+      self
     end
 
     # Yields itself for use in the configuration block
     # @example
     #  Lexile.configure do |c|
     #    c.api_key    = <MY-API-KEY>
-    #    c.api_verion = 'v2'
-    #    c.endpoint   = 'https://fabapi.lexile.com/api/fab/'
+    #    c.api_verion = '/api/fab/v2'
+    #    c.endpoint   = 'https://fabapi.lexile.com'
     #    c.timeout    = '10' #seconds
     #    c.testing    = true
     #  end

@@ -8,15 +8,18 @@
 This gem wraps a portion of the Lexile database API. You need to obtain an
 authorized username and password from Lexile to use the API. This gem is not
 meant to be a comprenhensive implementation of the API just a bare bones
-"Find the Lexile for a Specific Book" solution.
+"Find the Lexile for a Specific Book or Update your Lexile DB" solution.
 
-The gem only covers the endpoints to the `book` resource, the `category` and
+The gem only covers the endpoint to the `book` resource, the `category` and
 `serial` resources are beyond the scope of this gem . If you need access
  to these resources feel free to submit a PR with code and specs.
 
-The gem does not support pagination for result-sets longer than 20 books, while
-the API contains all provisions for pagination, it is beyond the scope of the
-gem to expose those.
+The gem now supports pagination for long result-sets using the `next` and `previous` links
+of the `meta` element of the response. Pagination is implemented as an Enumerable and it is
+transparent when you traverse the enumerable with each, select, map, etc.... ( `count` will
+paginate the whole collection, a more efficient implementation using the `total_count` from 
+the `meta` is left as practice for the reader)
+
 
 ## Installation
 
@@ -39,7 +42,8 @@ Or install it yourself as:
     end
 
 ## Usage
-
+```
+    # FIND BY LEXILE ID
     >>  b = Lexile.books.show("315833")
     #<Lexile::Book id= "315833" ISBN="006201272X" ISBN13="9780062012722" ... >
 
@@ -47,24 +51,44 @@ Or install it yourself as:
     "It Happened to Nancy: By An Anonymous Teenager: A True Story from Her Diary"
 
 
-
-    >> b = Lexile.books.find_by_isbn13("9780062012722")
+    # FIND BY ISBN13
+    >> b = Lexile.books.find_by_isbn13("9780062012722").first
     [#<Lexile::Book ISBN="006201272X" ISBN13="9780062012722" ... >]
 
     >>  b[0].title
     "It Happened to Nancy: By An Anonymous Teenager: A True Story from Her Diary"
 
 
-
-    >>  b = Lexile.books.find_by_title("to Nancy")
-    [#<Lexile::Book ISBN="0380773155" ISBN13="9780380773152" ... >, #<Lexile::Book ISBN="006201272X" ISBN13="9780062012722" ... >]
-
-    >> b.length
-    2
-
-    >>  b[0].title
+    # FIND BY TITLE
+    >>  books = Lexile.books.find_by_title("to Nancy")
+    books.count
+    >> 2
+    
+    books.each do |b|
+        puts b.ISBN13
+    end
+    >>  9780380773152
+    >>  9780062012722
+  
+    >>  books.first.title
     "It Happened to Nancy: By An Anonymous Teenager: A True Story from Her Diary"
 
+    # GET LATEST UPDATES TO DB ( supports paging )
+    books = Lexile.books.find( timestamp__gte: '2015-08-04', limit:100 )
+    # will load pages of 100 elements at a time until there are no further pages
+    books.each do |b|
+            ....
+    end
+    
+    books.first
+    >>[#<Lexile::Book ISBN="006201272X" ISBN13="9780062012722" ... >]
+    
+    books.fist(20).last
+    >>[#<Lexile::Book ISBN="00620XXX" ISBN13="9780063013733" ... >]
+    
+    books.count
+    >>107  #will paginate through the whole collection
+```        
 
 ## Contributing
 
@@ -78,7 +102,7 @@ Or install it yourself as:
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Curriculet Inc
+Copyright (c) 2015 Curriculet Inc
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

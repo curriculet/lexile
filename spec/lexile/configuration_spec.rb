@@ -22,7 +22,7 @@ describe Lexile::Configuration do
     end
     it "should configure the client with this configuration" do
       client = Lexile.configure do |config|
-        config.api_version = "V74_5_5"
+        config.endpoint = "V74_5_5"
       end
       client.should_not be_nil
       client.class.default_options[:base_uri].should match /V74_5_5/
@@ -30,7 +30,7 @@ describe Lexile::Configuration do
 
     it "should return a cliend configured with this configuration" do
         client = Lexile.configure do |config|
-          config.api_version = "V74_5_5"
+          config.endpoint = "V74_5_5"
         end
         client = Lexile.send(:client)
         client.should_not be_nil

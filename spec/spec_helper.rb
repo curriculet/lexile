@@ -18,16 +18,12 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr_tapes'
   c.hook_into :webmock
   c.configure_rspec_metadata!
-  c.default_cassette_options = {
-    #record:                      (ENV['TRAVIS'] ? :none : :once)
-    #record:                      :new_episodes
-    #record:                      :all
-    record:                      :none
-  }
-
   c.ignore_hosts 'codeclimate.com'
-  c.filter_sensitive_data("<USERNAME>") { Lexile.options[:username] }
-  c.filter_sensitive_data("<PASSWORD>") { Lexile.options[:password] }
+  c.filter_sensitive_data("<USERNAME>") { Lexile.username }
+  c.filter_sensitive_data("<PASSWORD>") { Lexile.password }
+  c.default_cassette_options = { :record => :none }
+  #c.default_cassette_options = { :record => :new_episodes }
+
 end
 
 RSpec.configure do |config|

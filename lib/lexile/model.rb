@@ -84,8 +84,7 @@ module Lexile
 
       # Parses a request.body response into a Lexile::Model objects
       #
-      def parse( raw_json )
-        parsed_json = String === raw_json ? JSON.parse(raw_json) : json
+      def parse( parsed_json )
         if parsed_json.has_key?('objects')
           #this is a multi record and data should contain an array
           unless parsed_json['objects'].is_a? Array

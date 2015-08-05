@@ -52,12 +52,13 @@ module Lexile
         
         yield get_args if block_given? 
                 
-        #puts "CALLING API: #{Lexile.api_url}#{path} ===#{get_options}"
+        puts "CALLING API: #{Lexile.api_url}#{path} ===#{get_args}"
         response = self.class.get( path, get_args)
 
         case response.code
         when 200..201
           response
+          JSON.parse( response.body )
         when 400
           raise Lexile::BadRequest.new(response, params)
         when 401
@@ -84,12 +85,12 @@ module Lexile
       # @return [Hash] The properly formated get_options.
       def build_get_args( params={}, user_headers={})
         get_args = {}
-        query ={ format: 'json'} #all requests get this query params
+        query ={} #all requests get these query params
 
         query.merge!(params)
 
-        # pass any headers
-        headers ={}
+
+        headers ={ 'Accept' => 'application/json'} #all requests get these headers
         headers.merge!( user_headers )
 
         get_args[:query]      = query

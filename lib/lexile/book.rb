@@ -2,7 +2,7 @@ module Lexile
   class Book < Hashie::Mash
     include Lexile::Model
 
-    api_path '/book'
+    api_path 'book'
 
     # Book Resource
     #

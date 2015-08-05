@@ -40,12 +40,12 @@ describe Lexile::Api::Books,  :vcr => { :cassette_name => "books" } do
       expect(books).to_not be_nil
     end
 
-    it 'should be array' do
-      expect(books).to be_an_instance_of( Array )
+    it 'first(10) should be array' do
+      expect(books.first(10)).to be_an_instance_of( Array )
     end
 
-    it 'length should be > 0' do
-      expect(books.length).to_not be_zero
+    it 'count should be > 0' do
+      expect(books.count).to_not be_zero
     end
 
     it 'should be array of Lexile::Book' do
@@ -55,19 +55,19 @@ describe Lexile::Api::Books,  :vcr => { :cassette_name => "books" } do
     end
 
     it 'should have id key' do
-      expect(books[0]).to respond_to(:id)
+      expect(books.first).to respond_to(:id)
     end
 
     it 'should have lexile key' do
-      expect(books[0]).to respond_to(:lexile)
+      expect(books.first).to respond_to(:lexile)
     end
 
     it 'should have lexile_display key' do
-      expect(books[0]).to respond_to(:lexile_display)
+      expect(books.first(5)[0]).to respond_to(:lexile_display)
     end
 
     it 'should have pages key' do
-      expect(books[0]).to respond_to(:pages)
+      expect(books.first).to respond_to(:pages)
     end
   end
 
@@ -78,12 +78,12 @@ describe Lexile::Api::Books,  :vcr => { :cassette_name => "books" } do
        expect(books).to_not be_nil
      end
 
-     it 'should be array' do
-       expect(books).to be_an_instance_of( Array )
+     it 'first(10) should return array' do
+       expect(books.first(10) ).to be_an_instance_of( Array )
      end
 
-     it 'length should be > 0' do
-       expect(books.length).to_not be_zero
+     it 'count should be > 0' do
+       expect(books.count).to_not be_zero
      end
 
      it 'should be array of Lexile::Book' do
@@ -93,19 +93,19 @@ describe Lexile::Api::Books,  :vcr => { :cassette_name => "books" } do
      end
 
      it 'should have id key' do
-       expect(books[0]).to respond_to(:id)
+       expect(books.first).to respond_to(:id)
      end
 
      it 'should have lexile key' do
-       expect(books[0]).to respond_to(:lexile)
+       expect(books.first).to respond_to(:lexile)
      end
 
      it 'should have lexile_display key' do
-       expect(books[0]).to respond_to(:lexile_display)
+       expect(books.first).to respond_to(:lexile_display)
      end
 
      it 'should have pages key' do
-       expect(books[0]).to respond_to(:pages)
+       expect(books.first).to respond_to(:pages)
      end
    end
 
