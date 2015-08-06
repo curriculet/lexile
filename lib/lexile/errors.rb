@@ -1,8 +1,9 @@
 module Lexile
-  class InvalidCredentials < StandardError; end
-  class CannotProcessResponse < StandardError; end
+  class Error < ::StandardError; end
+  class InvalidCredentials < Error; end
+  class CannotProcessResponse < Error; end
 
-  class HTTPError < StandardError
+  class HTTPError < Error
     attr_reader :response
     attr_reader :params
 
@@ -12,8 +13,12 @@ module Lexile
       super(response)
     end
 
+    def composed_message
+      "#{self.class.to_s} request_params: #{@params} response_status_code: #{@response.code} response_headers:#{@response.headers}"
+    end
+
     def to_s
-      "#{self.class.to_s} : #{response.code} #{response.body}"
+      composed_message
     end
   end
 
@@ -22,6 +27,6 @@ module Lexile
   class BadRequest            < HTTPError; end
   class ServerError           < HTTPError; end
   class AuthenticationFailed  < HTTPError; end
-  class RateLimited           < HTTPError; end
+  class TooManyRequests       < HTTPError; end
   class UnknownStatusCode     < HTTPError; end
 end

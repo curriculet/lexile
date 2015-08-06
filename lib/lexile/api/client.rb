@@ -21,7 +21,7 @@ module Lexile
 
         if configuration.is_a?(Module) && configuration.to_s == 'Lexile'
           config = configuration
-        else 
+        else
           if configuration.is_a?(Hash)
             config = Hashie::Mash.new( configuration )
             config.api_url = [config.endpoint,config.api_version].join('/')
@@ -47,32 +47,32 @@ module Lexile
       # @return [String]. The raw response body (JSON is expected) Raises appropriate exception if it fails
       # @raise Lexile::HTTPError when any HTTP error response is received
       def get( path, params={}, headers={})
-        
+
         get_args = build_get_args( params, headers)
-        
-        yield get_args if block_given? 
-                
+
+        yield get_args if block_given?
+
         #puts "CALLING API: #{Lexile.api_url}#{path} ===#{get_args}"
         response = self.class.get( path, get_args)
 
         case response.code
-        when 200..201
-          response
-          JSON.parse( response.body )
-        when 400
-          raise Lexile::BadRequest.new(response, params)
-        when 401
-          raise Lexile::AuthenticationFailed.new(response, params)
-        when 404
-          raise Lexile::NotFound.new(response, params)
-        when 500
-          raise Lexile::ServerError.new(response, params)
-        when 502
-          raise Lexile::Unavailable.new(response, params)
-        when 503, 504
-          raise Lexile::RateLimited.new(response, params)
-        else
-          raise Lexile::UnknownStatusCode.new(response, params)
+          when 200..201
+            response
+            JSON.parse( response.body )
+          when 400
+            raise Lexile::BadRequest.new(response, params)
+          when 401
+            raise Lexile::AuthenticationFailed.new(response, params)
+          when 404
+            raise Lexile::NotFound.new(response, params)
+          when 429
+            raise Lexile::TooManyRequests.new(response, params)
+          when 500
+            raise Lexile::ServerError.new(response, params)
+          when 502, 503, 504
+            raise Lexile::Unavailable.new(response, params)
+          else
+            raise Lexile::UnknownStatusCode.new(response, params)
         end
       end
 
@@ -96,7 +96,7 @@ module Lexile
         get_args[:query]      = query
         get_args[:headers]    = headers
         get_args[:basic_auth] = { username: Lexile.options[:username],
-                                     password: Lexile.options[:password]}
+                                  password: Lexile.options[:password]}
         get_args
       end
     end

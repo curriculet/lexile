@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Lexile::HTTPError do
   let(:response){
     mock_response = double()
-    mock_response.stub(:code){ 259 }
-    mock_response.stub(:body){"<html><head></head><body>Hello World!</body></html>"}
+    mock_response.stub(:code){ 429 }
+    mock_response.stub(:headers){ "Some Headers" }
     mock_response
   }
 
@@ -12,7 +12,7 @@ describe Lexile::HTTPError do
 
   it "should format correctly as a string" do
     subject.to_s.should match /Lexile::HTTPError/
-    subject.to_s.should match /259/
-    subject.to_s.should match /Hello World/
+    subject.to_s.should match /429/
+    subject.to_s.should match /Some Headers/
   end
 end

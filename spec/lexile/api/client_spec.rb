@@ -80,14 +80,18 @@ describe Lexile::API::Client do
       {status: 400, ex: Lexile::BadRequest },
       {status: 401, ex: Lexile::AuthenticationFailed},
       {status: 404, ex: Lexile::NotFound},
+      {status: 429, ex: Lexile::TooManyRequests},
       {status: 500, ex: Lexile::ServerError},
       {status: 502, ex: Lexile::Unavailable},
-      {status: 503, ex: Lexile::RateLimited},
-      {status: 504, ex: Lexile::RateLimited},
+      {status: 503, ex: Lexile::Unavailable},
+      {status: 504, ex: Lexile::Unavailable},
       {status: 999, ex: Lexile::UnknownStatusCode}
     ].each do |test_args|
       it "should raise #{test_args[:ex].name} when status code is #{test_args[:status]}" do
-        client.class.stub(:get){ mock = double; mock.stub(:code){test_args[:status]}; mock }
+        mock = double
+        mock.stub(:code){test_args[:status]}
+        mock.stub(:headers){ "Some Headers From The  Request"}
+        client.class.stub(:get){ mock }
         expect{
           client.get("/something")
         }.to raise_error test_args[:ex]
